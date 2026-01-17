@@ -1,0 +1,49 @@
+===============================================
+FIX: "src refspec main does not match any"
+===============================================
+
+This error means there's no "main" branch locally yet.
+
+RUN THESE COMMANDS IN VS CODE TERMINAL (one by one):
+---------------------------------------------------
+
+1. Check current status:
+   git status
+
+2. If you see "nothing to commit", you need to add files first:
+   git add .
+
+3. Create your first commit (this will create the branch):
+   git commit -m "Initial commit: EURUSYS Contract Management Platform"
+
+4. Check what branch you're on:
+   git branch
+
+5. If it shows "master" or another name, rename to "main":
+   git branch -M main
+
+6. Now push:
+   git push -u origin main
+
+===============================================
+IF STILL NOT WORKING:
+===============================================
+
+Try pushing "master" branch instead:
+   git push -u origin master
+
+Then rename it later:
+   git branch -M main
+   git push -u origin main
+   git push origin --delete master  (to delete old master on GitHub)
+
+===============================================
+IF YOU SEE "nothing to commit, working tree clean":
+===============================================
+
+Your files might not be tracked. Force add everything:
+   git add -A
+   git commit -m "Initial commit: EURUSYS Contract Management Platform"
+   git push -u origin main
+
+===============================================
